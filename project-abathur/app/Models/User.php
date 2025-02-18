@@ -44,4 +44,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    function movimientoStocks()
+    {
+        return $this->hasMany(MovimientoStock::class);
+    }
 }

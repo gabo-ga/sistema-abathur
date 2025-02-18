@@ -17,4 +17,8 @@ class Medicamento extends Model
         'descripcion'
     ];
 
+    public function lotes(){
+        return $this->hasMany(Lote::class);
+    }
+
 }

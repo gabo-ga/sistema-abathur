@@ -17,4 +17,8 @@ class Proveedor extends Model
         'email',
         'direccion'
     ];
+
+    public function lotes(){
+        return $this->hasMany(Lote::class);
+    }
 }

@@ -20,4 +20,16 @@ class Lote extends Model
         'fecha_fabricacion',
         'numero_lote'
     ];
+
+    public function movimiento(){
+        return $this->hasMany(MovimientoStock::class);
+    }
+
+    public function proveedor(){
+        return $this->hasOne(Proveedor::class);
+    }
+
+    public function medicamento(){
+        return $this->hasOne(Medicamento::class);
+    }
 }

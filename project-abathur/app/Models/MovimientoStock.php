@@ -19,4 +19,15 @@ class MovimientoStock extends Model
         'user_id',
         'lote_id',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function lote()
+    {
+        return $this->belongsTo(Lote::class);
+    }
+
 }
