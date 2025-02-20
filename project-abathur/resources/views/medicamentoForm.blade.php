@@ -1,10 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-
-<body class="bg-gray-100 flex justify-center items-center min-h-screen">
-
-    <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+<div>
+    <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col justify-center items-center w-3/4 mx-auto mt-8">
         <h2 class="text-2xl font-bold text-center text-blue-600 mb-6">Registrar Medicamento</h2>
 
         <form action="http://localhost:8000/api/medicamentos" method="POST" class="space-y-4">
@@ -35,9 +33,7 @@
             </button>
         </form>
     </div>
-
-</body>
-
+</div>
 @endsection
 
 

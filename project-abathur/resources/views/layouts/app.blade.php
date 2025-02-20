@@ -8,7 +8,11 @@
     <title>Sistema Abathur</title>
 </head>
 
-@yield('content')
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <x-header></x-header>
+    @yield('content')
+</body>
+
 
 
 </html>
