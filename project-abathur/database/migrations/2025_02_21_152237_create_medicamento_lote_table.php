@@ -11,14 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lotes', function (Blueprint $table) {
+        Schema::create('medicamentos_lotes', function (Blueprint $table) {
             $table->id();
-            $table->integer('numero_lote');
-            $table->date('fecha_fabricacion');
-            $table->date('fecha_vencimiento');
-            $table->integer('cantidad_inicial');
-            $table->integer('cantidad_actual');
-            $table->foreignId('proveedor_id')->constrained('proveedores');
+            $table->foreignId('medicamento_id')->constrained('medicamentos');
+            $table->foreignId('lote_id')->constrained('lotes');
             $table->timestamps();
         });
     }
@@ -28,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lotes');
+        Schema::dropIfExists('medicamento_lote');
     }
 };

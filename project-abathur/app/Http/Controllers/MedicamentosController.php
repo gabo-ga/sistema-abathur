@@ -10,7 +10,7 @@ class MedicamentosController extends Controller
 {
     public function index(){
         $medicamentos = Medicamento::all();
-        return response()->json($medicamentos, 200);
+        return view('medicamentoIndex', compact('medicamentos'));
     }
 
     public function store(Request $request){
@@ -22,10 +22,13 @@ class MedicamentosController extends Controller
 
         $medicamento = Medicamento::create($request->all());
 
-        return response()->json([
-            'message' => 'Medicamento creado',
-            'medicamento' => $medicamento
-            ], 201);
+        if($medicamento){
+            return redirect()->route('medicamento.all');
+        } else {
+            return response()->json([
+                'message' => 'Error al registrar el medicamento'
+            ], 400);
+        }
     }
 
     public function show($id){
@@ -75,5 +78,5 @@ class MedicamentosController extends Controller
             ], 404);
         }
     }
-    
+
 }

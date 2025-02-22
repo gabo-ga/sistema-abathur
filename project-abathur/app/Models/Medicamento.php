@@ -17,8 +17,8 @@ class Medicamento extends Model
         'descripcion'
     ];
 
-    public function lotes(){
-        return $this->hasMany(Lote::class);
+    public function medicamento_lote(){
+        return $this->belongsToMany(Medicamento::class, 'medicamentos_lotes', 'medicamento_id', 'lote_id');
     }
 
 }

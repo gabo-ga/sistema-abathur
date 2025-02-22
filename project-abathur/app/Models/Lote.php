@@ -12,7 +12,6 @@ class Lote extends Model
     protected $table = 'lotes';
 
     protected $fillable = [
-        'medicamento_id',
         'proveedor_id',
         'cantidad_inicial',
         'cantidad_actual',
@@ -21,15 +20,15 @@ class Lote extends Model
         'numero_lote'
     ];
 
-    public function movimiento(){
+    public function movimiento_stock(){
         return $this->hasMany(MovimientoStock::class);
     }
 
     public function proveedor(){
-        return $this->hasOne(Proveedor::class);
+        return $this->belongsTo(Proveedor::class);
     }
 
-    public function medicamento(){
-        return $this->hasOne(Medicamento::class);
+    public function medicamento_lote(){
+        return $this->belongsToMany(Medicamento::class, 'medicamentos_lotes', 'lote_id', 'medicamento_id');
     }
 }
