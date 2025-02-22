@@ -10,9 +10,13 @@
 
 <body class="bg-gray-100 flex flex-col min-h-screen">
     <x-header></x-header>
-    @yield('content')
+    <div class="container">
+        @yield('content')
+    </div>
+
 </body>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
 </html>

@@ -52,11 +52,9 @@ class MedicamentosController extends Controller
                 'presentacion' => 'required',
                 'descripcion' => 'required'
             ]);
-            $medicamento->update($request->all());
-            return response()->json([
-                'message' => 'Medicamento actualizado',
-                'medicamento' => $medicamento
-            ], 200);
+            if($medicamento->update($request->all())){
+                return $this->index();
+            }
         } else {
             return response()->json([
                 'message' => 'Medicamento no encontrado'

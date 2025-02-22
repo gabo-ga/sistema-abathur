@@ -13,9 +13,10 @@
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
                         <a href="/" class="hover:underline block ">Inicio</a>
                     </div>
-
                 </li>
-                <li><a href="{{route('medicamento.form')}}" class="hover:underline block">Registrar medicamento</a></li>
+                <li>
+                    <a href="{{route('medicamento.form')}}" class="hover:underline block">Registrar medicamento</a>
+                </li>
                 <li><a href="{{route('medicamento.all')}}" class="hover:underline block">Lista de medicamentos</a></li>
                 <li><a href="/about" class="hover:underline block">Acerca de</a></li>
                 <li><a href="/contact" class="hover:underline block">Contacto</a></li>
